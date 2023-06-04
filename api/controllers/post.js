@@ -30,7 +30,7 @@ export const addPost = (req, res) => {
     jwt.verify(token, "jwtkey", (err, userInfo) => {
         if (err) return res.status(403).json("Token is not valid...");
 
-        const q = 'INSERT INRO posts (`title`, `desc`, `img`, `cat`, `date`, `uid`) VALUES (?)';
+        const q = 'INSERT INTO posts (`title`, `desc`, `img`, `cat`, `date`, `uid`) VALUES (?)';
 
         const values = [
             req.body.title,
